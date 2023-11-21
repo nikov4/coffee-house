@@ -250,3 +250,63 @@ h2 {
   background: #665F55;
 }
 
+/* About */
+
+.section-about {
+  padding: 100px 40px;
+}
+
+.about-images {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.images-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  width: 660px;
+}
+
+.image-box-1 {
+  width: 660px;
+  height: 660px;
+  background: url(/images/about-1.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 40px;
+}
+
+.image-box-2 {
+  width: 660px;
+  height: 430px;
+  background: url(/images/about-2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 40px;
+}
+
+.image-box-3 {
+  width: 660px;
+  height: 430px;
+  background: url(/images/about-3.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 40px;
+}
+
+.image-box-4 {
+  width: 660px;
+  height: 660px;
+  background: url(/images/about-4.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 40px;
+}
