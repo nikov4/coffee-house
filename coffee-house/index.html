@@ -8,7 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
-    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="/styles/normalize.css">
+    <link rel="stylesheet" href="/styles/styles.css">
     <link rel="icon" href="favicon.ico">
     <title>Coffee House</title>
   </head>
@@ -17,13 +18,29 @@
 
     <div class="container">
 
-      <header></header>
+<!-- Section Header -->
 
-      <nav></nav>
+      <header class="section-header">
+
+        <a href="/"><img src="/images/logo.png" width="100" height="60" alt="Resource Coffee House"></a>
+        <nav>
+          <ul class="section-nav">
+            <li><a class="header-menu" href="#favorite-coffee">Favorite Coffe</a></li>
+            <li><a class="header-menu" href="#about">About</a></li>
+            <li><a class="header-menu" href="#mobile-app">Mobile app</a></li>
+            <li><a class="header-menu" href="#contact-us">Contacts us</a></li>
+          </ul>
+        </nav>
+        <div class="section-menu">
+          <div><a class="header-menu" href="/menu/">Menu</a></div>
+          <img src="/images/coffee-cup.svg" width="20" height="20" alt="Menu">
+        </div>
+
+      </header>
 
       <main>
 
-        <section class="section-hero"></section>
+        <section class="section-enjoy"></section>
         <section class="section-favorite"></section>
         <section class="section-about"></section>
         <section class="section-mobile"></section>
