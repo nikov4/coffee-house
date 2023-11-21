@@ -1,3 +1,5 @@
+/* Common styles */
+
 html {
   width: 100%;
   height: 100%;
@@ -35,7 +37,25 @@ a.hero-link:hover {
   border-bottom: solid 5px #B0907A;
 }
 
-/* Common styles */
+p, h1, h2, ul, form {
+  padding: 0;
+  margin: 0;
+}
+
+h2 {
+  color: #403F3D;
+  text-align: center;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.h2-accent {
+  color: #B0907A;
+  font-style: italic;
+}
 
 .container {
   max-width: 1440px;
@@ -45,6 +65,8 @@ a.hero-link:hover {
   overflow: hidden;
   background: #E1D4C9;
 }
+
+/* Header */
 
 .section-header {
   display: flex;
@@ -77,6 +99,8 @@ a.hero-link:hover {
   font-weight: 600;
   line-height: 150%;
 }
+
+/* Hero */
 
 .section-hero {
   display: flex;
@@ -137,3 +161,92 @@ a.hero-link:hover {
   font-weight: 600;
   line-height: 150%;
 }
+
+/* Favorites */
+
+.section-favorite {
+  padding: 100px 40px;
+}
+
+.favorite-slider {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  height: 640px;
+  gap: 40px;
+  padding: 40px 0 0 0;
+}
+
+.favorite-carretes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 100px;
+  border: 1px solid #665F55;
+}
+
+.favorite-wrapper {
+  width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.slide-header {
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.slide-text {
+  align-self: center;
+  text-align: center;
+  width: 480px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.slide-price {
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.slider-controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding-top: 40px;
+}
+
+.slide-control {
+  width: 40px;
+  height: 4px;
+  border-radius: 100px;
+  background: #C1B6AD;
+}
+
+.slide-active {
+  width: 40px;
+  height: 4px;
+  border-radius: 100px;
+  background: #665F55;
+}
+
