@@ -575,6 +575,10 @@ h2 {
   line-height: 150%;
 }
 
+.item-link {
+  cursor: pointer;
+}
+
 .address-item img {
   margin-right: 4px;
 }
