@@ -36,7 +36,7 @@ a, a.hero-link, a.header-menu, a.header-menu:link, a.header-menu:visited {
 
 a.header-menu:hover, a.header-menu:active {
   color: #403F3D;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 a.hero-link:hover {
@@ -51,8 +51,6 @@ p, h1, h2, h3, ul, form {
 
 h2 {
   color: #403F3D;
-  text-align: center;
-  font-feature-settings: 'clig' off, 'liga' off;
   font-size: 60px;
   font-style: normal;
   font-weight: 600;
@@ -110,7 +108,7 @@ h2 {
   word-spacing: 1px;
 }
 
-.section-menu {
+.nav-menu {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -174,6 +172,7 @@ h2 {
 .hero-button-wrapper {
   display: flex;
   flex-direction: row;
+  cursor: pointer;
 /*
   width: 44px;
   padding: 20px 78px;
@@ -216,6 +215,7 @@ h2 {
 
 .hero-button-wrapper:hover .hero-svg {
   stroke: #403F3D;
+  opacity: 1;
   animation-name: fadeIn;
   animation-delay: 0.1s;
   animation-duration: 1s;
@@ -514,10 +514,11 @@ h2 {
   gap: 10px;
   border-radius: 100px;
   border: 1px solid #665F55;
-  transition-duration: 0.5s;
+  transition-duration: 0.7s;
   transition-property: all;
   transition-delay: 0.1s;
   transition-timing-function: ease-in-out;
+  cursor: pointer;
 }
 
 .store-button:hover {
@@ -527,7 +528,7 @@ h2 {
 
 .store-svg {
   fill: #403F3D;
-  transition-duration: 0.5s;
+  transition-duration: 0.7s;
   transition-property: all;
   transition-delay: 0.1s;
   transition-timing-function: ease-in-out;
@@ -661,4 +662,27 @@ h2 {
 
 .address-item img {
   margin-right: 4px;
+}
+
+/* Menu */
+
+.section-menu {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 40px;
+}
+
+.menu-header {
+  width: 800px;
+  text-align: center;
+  padding: auto;
+}
+
+.menu-header-accent {
+  color: #B0907A;
+  font-style: italic;
+  letter-spacing: -0.8px;
 }
