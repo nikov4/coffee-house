@@ -433,21 +433,27 @@ h2 {
   gap: 10px;
   border-radius: 100px;
   border: 1px solid #665F55;
+  transition-duration: 0.5s;
+  transition-property: all;
+  transition-delay: 0.1s;
+  transition-timing-function: ease-in-out;
 }
 
 .store-button:hover {
   background: #665F55;
   color: #C1B6AD;
-  transition-delay: 0.2s;
 }
 
 .store-svg {
   fill: #403F3D;
+  transition-duration: 0.5s;
+  transition-property: all;
+  transition-delay: 0.1s;
+  transition-timing-function: ease-in-out;
 }
 
 .store-button:hover .store-svg {
   fill: #C1B6AD;
-  transition-delay: 0.2s;
 }
 
 .store-detail {
@@ -511,6 +517,10 @@ h2 {
   height: 59px;
   border-radius: 100px;
   border: 1px solid #C1B6AD;
+  transition-duration: 0.5s;
+  transition-property: all;
+  transition-delay: 0.1s;
+  transition-timing-function: ease-in-out;
 }
 
 .social-link:hover {
