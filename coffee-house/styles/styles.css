@@ -485,7 +485,6 @@ h2 {
   gap: 100px;
   /* max-width: 1360px; */
   margin: 60px 40px 40px 40px;
-  padding0: 100px;
   padding: 60px 100px 100px 100px;
   background: #665F55;
   border-radius: 40px;
@@ -529,6 +528,10 @@ h2 {
 
 .social-svg {
   stroke: #E1D4C9;
+  transition-duration: 0.5s;
+  transition-property: all;
+  transition-delay: 0.1s;
+  transition-timing-function: ease-in-out;
 }
 
 .social-link:hover .social-svg {
