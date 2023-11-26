@@ -66,6 +66,7 @@ h2 {
 .h2-accent {
   color: #B0907A;
   font-style: italic;
+  word-spacing: -0.03em;
 }
 
 .container {
@@ -233,7 +234,7 @@ h2 {
   align-items: center;
   justify-content: space-between;
   align-items: center;
-  /* width0: 1360px; */
+  /* width: 1360px; */
   height: 640px;
   gap: 40px;
   padding: 40px 3px 0 3px;
@@ -337,40 +338,42 @@ h2 {
   width: 660px;
 }
 
-.image-box-1 {
+.image-box-590 {
+  display: inline-block;
   width: 660px;
-  height: 660px;
-  background: url(/images/about-1.jpg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border-radius: 40px;
+  height: 590px;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
-.image-box-2 {
+.image-box-590 img {
+  transition: 0.5s;
+  transition-timing-function: ease-in-out;
+  display: block;
+  transform: scale(1.1,1.2);
+ }
+
+ .image-box-590 img:hover {
+  transform: scale(1.0,1.1);
+ }
+
+ .image-box-430 {
+  display: inline-block;
   width: 660px;
   height: 430px;
-  background: url(/images/about-2.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 40px;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
-.image-box-3 {
-  width: 660px;
-  height: 430px;
-  background: url(/images/about-3.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 40px;
+.image-box-430 img {
+  transition: 0.5s;
+  transition-timing-function: ease-in-out;
+  display: block;
+  transform: scale(1.1,1.7);
 }
 
-.image-box-4 {
-  width: 660px;
-  height: 660px;
-  background: url(/images/about-4.jpg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border-radius: 40px;
+.image-box-430 img:hover {
+  transform: scale(1.0,1.5);
 }
 
 /* Mobile */
