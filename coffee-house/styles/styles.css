@@ -50,6 +50,7 @@ p, h1, h2, h3, ul, form {
 }
 
 h2 {
+  text-align: center;
   color: #403F3D;
   font-size: 60px;
   font-style: normal;
