@@ -249,6 +249,27 @@ h2 {
   height: 60px;
   border-radius: 100px;
   border: 1px solid #665F55;
+  transition-duration: 0.5s;
+  transition-property: all;
+  transition-delay: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.favorite-carretes:hover {
+  background: #665F55;
+  color: #E1D4C9;
+}
+
+.carrete-svg {
+  stroke: #403F3D;
+  transition-duration: 0.5s;
+  transition-property: all;
+  transition-delay: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.favorite-carretes:hover .carrete-svg {
+  stroke: #E1D4C9;
 }
 
 .favorite-wrapper {
@@ -303,6 +324,15 @@ h2 {
   height: 4px;
   border-radius: 100px;
   background: #C1B6AD;
+  transition-duration: 0.5s;
+  transition-property: all;
+  transition-delay: 0.1s;
+  transition-timing-function: ease-in-out;
+  cursor: pointer;
+}
+
+.slide-control:hover {
+  background: #665F55;
 }
 
 .slide-active {
@@ -310,6 +340,7 @@ h2 {
   height: 4px;
   border-radius: 100px;
   background: #665F55;
+  cursor: none;
 }
 
 /* About */
