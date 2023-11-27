@@ -6,7 +6,7 @@
   font-style: italic;
   font-weight: 600;
   line-height: 105%;
-  src: url("/fonts/Inter-BoldItalic.otf") format("opentype"),
+  src: url("../fonts/Inter-BoldItalic.otf") format("opentype"),
 }
 
 html {
@@ -145,7 +145,7 @@ li.nav-item:hover .hover-line {
 }
 
 .header-cup {
-  background-image: url(/images/icon-coffee-cup.svg);
+  background-image: url(../images/icon-coffee-cup.svg);
   background-position: top right;
   background-repeat: no-repeat;
   width: 70px;
@@ -162,7 +162,7 @@ li.nav-item:hover .hover-line {
   align-items: flex-start;
   align-self: stretch;
   border-radius: 40px;
-  background-image: url(/images/img-hero.jpg);
+  background-image: url(../images/img-hero.jpg);
   background-position: center;
 }
 
@@ -507,7 +507,7 @@ li.nav-item:hover .hover-line {
 .mobile-right {
   width: 630px;
   height: 630px;
-  background: url(/images/mobile-screens.png);
+  background: url(../images/mobile-screens.png);
   background-size: cover;
   margin-top: 21px;
 }

@@ -29,7 +29,7 @@ function showOffers(tab) {
   }
 
   // fetching data from json file
-  const jsonFile = '/products.json';
+  const jsonFile = './products.json';
   fetch(jsonFile)
     .then(function(response) {
       if (response.ok) {
@@ -63,7 +63,7 @@ function showOffers(tab) {
           imgBlock.classList.add('offer-img');
           img = imgBlock.appendChild(document.createElement("img"));
           count += 1;
-          pix = pix.concat('/images/', selectedTab, '-', count, '.jpg');
+          pix = pix.concat('./images/', selectedTab, '-', count, '.jpg');
           img.setAttribute('src', pix);
           img.setAttribute('width', '680');
           img.setAttribute('height', '680');
