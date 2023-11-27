@@ -739,11 +739,11 @@ li.nav-item:hover .hover-line {
   cursor: pointer;
 }
 
-.item-selected, .tab-item:hover {
+.tab-item-selected, .tab-item:hover {
   background: #665F55;
 }
 
-.item-selected {
+.tab-item-selected {
   cursor: default;
 }
 
@@ -760,7 +760,7 @@ li.nav-item:hover .hover-line {
   transition-timing-function: ease-in-out;
 }
 
-.tab-emoji-selected, .tab-item:hover .tab-item-emoji {
+.tab-item-emoji-selected, .tab-item:hover .tab-item-emoji {
   background: #E1D4C9;
 }
 
@@ -772,7 +772,7 @@ li.nav-item:hover .hover-line {
   line-height: 150%;
 }
 
-.tab-name-selected, .tab-item:hover .tab-item-name {
+.tab-item-name-selected, .tab-item:hover .tab-item-name {
   color: #E1D4C9;
 }
 
@@ -784,6 +784,11 @@ li.nav-item:hover .hover-line {
 }
 
 .offer-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 12px;
   height: 506px;
   border-radius: 40px;
   border: 1px solid #C1B6AD;
@@ -809,6 +814,7 @@ li.nav-item:hover .hover-line {
  }
 
 .offer-name {
+  padding: 8px 20px 0 20px;
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
@@ -816,6 +822,7 @@ li.nav-item:hover .hover-line {
 }
 
 .offer-text {
+  padding: 0 20px;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -823,6 +830,7 @@ li.nav-item:hover .hover-line {
 }
 
 .offer-price {
+  padding: 0 20px;
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
