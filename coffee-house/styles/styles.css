@@ -706,3 +706,52 @@ li.nav-item:hover .hover-line {
   font-style: italic;
   letter-spacing: -0.8px;
 }
+
+.tabs-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0px;
+  gap: 12px;
+}
+
+.tab-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 0px;
+  gap: 10px;
+  border-radius: 100px;
+  border: 1px solid #C1B6AD;
+  padding: 6px 16px 6px 8px;
+}
+.item-selected {
+  background: #665F55;
+}
+
+.tab-item-emoji {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  padding: 7px 7px;
+  background: #C1B6AD;
+}
+
+.tab-emoji-selected {
+  background: #E1D4C9;
+}
+
+.tab-item-name {
+  color: #403F3D;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+.tab-name-selected {
+  color: #E1D4C9;
+}
