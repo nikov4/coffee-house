@@ -18,7 +18,6 @@ function showOffers(tab) {
       tabId = Classes[j].concat('-', Tabs[i]);
       tabClass = Classes[j].concat('-selected');
       tabClick = onClick.concat('(\'', Tabs[i], '\')');
-      // console.log(i, j, selectedTab, tabId, tabClass, tabClick);
       if (Tabs[i] === selectedTab) {
         tabClass = document.getElementById(tabId).classList.add(tabClass);
         tabClick = document.getElementById(tabId).removeAttribute('onclick');
@@ -43,7 +42,6 @@ function showOffers(tab) {
     .then(function(data) {
 
       // fetching ok
-      // console.log(data);
       let item = '', itemId = '', imgBlock = '', img = '', pix = '', nameBlock = '', textBlock = '', priceBlock = '';
       let count = 0;
       let totalCount = 0;
@@ -52,11 +50,11 @@ function showOffers(tab) {
 
       for (let [key, value] of Object.entries(data)) {
 
-        //console.log(key, value);
+        // current tab
         if (value.category === selectedTab) {
+
           // offer
           item = offerContainer.appendChild(document.createElement("div"));
-          //item = document.querySelector('.offers-container').appendChild(document.createElement("div"));
           item.classList.add('offer-item');
           item.setAttribute('id', `offerId_${totalCount}`);
 
@@ -91,15 +89,9 @@ function showOffers(tab) {
         } else {
 
           // delete outdated offers
-          /*
-          const element = document.getElementById(offerContainer);
-          while (element.firstChild) {
-            element.removeChild(element.firstChild);
-          }
-          */
           if (offerContainer.hasChildNodes()) {
             ContainerId = document.getElementById(`offerId_${totalCount}`);
-            // if offer exist
+            // if offers exist
             if (document.body.contains(ContainerId)) {
               itemId = offerContainer.removeChild(ContainerId);
             }

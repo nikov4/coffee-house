@@ -786,8 +786,9 @@ li.nav-item:hover .hover-line {
 .offer-item {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: stretch;
+  justify-content: space-between;
+  align-content: stretch;
   gap: 12px;
   height: 506px;
   border-radius: 40px;
@@ -822,6 +823,7 @@ li.nav-item:hover .hover-line {
 }
 
 .offer-text {
+  min-height: 72px;
   padding: 0 20px;
   font-size: 16px;
   font-style: normal;
@@ -830,7 +832,8 @@ li.nav-item:hover .hover-line {
 }
 
 .offer-price {
-  padding: 0 20px;
+  min-height: 30px;
+  padding: 0 20px 20px 20px;
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
