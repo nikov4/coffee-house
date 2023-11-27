@@ -199,10 +199,6 @@ li.nav-item:hover .hover-line {
   display: flex;
   flex-direction: row;
   cursor: pointer;
-/*
-  width: 44px;
-  padding: 20px 78px;
-*/
   width: 200px;
   height: 64px;
   justify-content: center;
@@ -264,40 +260,6 @@ li.nav-item:hover .hover-line {
   }
 }
 
-/*
-.hero-button-wrapper .hero-svg {
-  stroke: #403F3D;
-  animation-name: fadeOut;
-  animation-delay: 0.1s;
-  animation-duration: 1s;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
-}
-
-@keyframes fadeOut {
-  0% {
-    display: block;
-    opacity: 1;
-  }
-  1% {
-    display: block;
-    opacity: 1;
-  }
-  100% {
-    display: none;
-    opacity: 0;
-  }
-}
-*/
-
-/*
-.hero-button:hover::after{
-  content: url(/images/icon-coffee-cup.svg);
-  width: 20px;
-  height: 20px;
-}
-*/
-
 /* Favorites */
 
 .section-favorite {
@@ -310,7 +272,6 @@ li.nav-item:hover .hover-line {
   align-items: center;
   justify-content: space-between;
   align-items: center;
-  /* width: 1360px; */
   height: 640px;
   gap: 40px;
   padding: 40px 3px 0 3px;
@@ -591,7 +552,6 @@ li.nav-item:hover .hover-line {
   justify-content: flex-start;
   align-items: center;
   gap: 100px;
-  /* max-width: 1360px; */
   margin: 60px 40px 40px 40px;
   padding: 60px 100px 100px 100px;
   background: #665F55;
