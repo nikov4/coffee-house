@@ -810,7 +810,7 @@ li.nav-item:hover .hover-line {
   transform: scale(1.1,1.1);
  }
 
- .offer-item:hover .offer-img, .offer-item img:hover {
+ .offer-item:hover .offer-img, .offer-img img:hover {
   transform: scale(1.0,1.0);
  }
 
