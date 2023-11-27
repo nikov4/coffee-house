@@ -93,6 +93,11 @@ li.nav-item:hover .hover-line {
   opacity: 1;
 }
 
+.hover-line-active {
+  opacity: 1;
+  transform: scaleX(100%);
+}
+
 /* Header */
 
 .section-header {
