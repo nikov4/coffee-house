@@ -32,6 +32,9 @@ ul {
 a, a.hero-link, a.header-menu, a.header-menu:link, a.header-menu:visited {
   color: #403F3D;
   text-decoration: none;
+}
+
+li.nav-item:hover {
   cursor: pointer;
 }
 
