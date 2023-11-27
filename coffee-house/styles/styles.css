@@ -32,16 +32,7 @@ ul {
 a, a.hero-link, a.header-menu, a.header-menu:link, a.header-menu:visited {
   color: #403F3D;
   text-decoration: none;
-}
-
-a.header-menu:hover, a.header-menu:active {
-  color: #403F3D;
-  text-decoration: underline;
-}
-
-a.hero-link:hover {
-  color: #403F3D;
-  text-decoration: none;
+  cursor: pointer;
 }
 
 p, h1, h2, h3, ul, form {
@@ -79,6 +70,24 @@ h2 {
 
 .alignleft {
   text-align: left;
+}
+
+/* Menu hover animation */
+
+.hover-line {
+  height: 2px;
+  background: #403F3D;
+  transform: scaleX(0%);
+  opacity: 0;
+  transition-duration: 0.5s;
+  transition-property: all;
+  transition-delay: 0s;
+  transition-timing-function: ease-in-out;
+}
+
+li.nav-item:hover .hover-line {
+  transform: scaleX(100%);
+  opacity: 1;
 }
 
 /* Header */
