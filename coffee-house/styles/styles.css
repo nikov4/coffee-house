@@ -649,6 +649,12 @@ li.nav-item:hover .hover-line {
   cursor: pointer;
 }
 
+li.item-link:hover .hover-line {
+  background: #E1D4C9;
+  transform: scaleX(100%);
+  opacity: 1;
+}
+
 .address-item img {
   margin-right: 4px;
 }
