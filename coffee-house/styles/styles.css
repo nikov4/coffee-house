@@ -291,6 +291,7 @@ li.nav-item:hover .hover-line {
   transition-property: all;
   transition-delay: 0.1s;
   transition-timing-function: ease-in-out;
+  cursor: pointer;
 }
 
 .favorite-carretes:hover {
