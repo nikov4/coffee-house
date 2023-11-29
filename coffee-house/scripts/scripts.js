@@ -42,7 +42,7 @@ function showOffers(tab) {
     .then(function(data) {
 
       // fetching ok
-      let item = '', itemId = '', imgBlock = '', img = '', pix = '', nameBlock = '', textBlock = '', priceBlock = '';
+      let item = '', itemId = '', imgBlock = '', img = '', imgSrc = '', nameBlock = '', textBlock = '', priceBlock = '';
       let count = 0;
       let totalCount = 0;
       let ContainerId = '';
@@ -63,13 +63,13 @@ function showOffers(tab) {
           imgBlock.classList.add('offer-img');
           img = imgBlock.appendChild(document.createElement("img"));
           count += 1;
-          pix = pix.concat('./images/', selectedTab, '-', count, '.jpg');
-          img.setAttribute('src', pix);
+          imgSrc = imgSrc.concat('./images/', selectedTab, '-', count, '.jpg');
+          img.setAttribute('src', imgSrc);
           img.setAttribute('width', '680');
           img.setAttribute('height', '680');
           img.setAttribute('alt', `${value.name}`);
           img.classList.add('offer-img');
-          pix = '';
+          imgSrc = '';
 
           // offer name
           nameBlock = item.appendChild(document.createElement("div"));
