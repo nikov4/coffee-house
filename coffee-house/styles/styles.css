@@ -736,7 +736,24 @@ li.item-link:hover .hover-line {
   }
 
   .favorite-carretes {
-    pointer-events: none;
+    cursor: default;
+  }
+
+  .favorite-carretes:hover {
+    background: #E1D4C9;
+    color: #665F55;
+  }
+
+  .favorite-carretes:hover .carrete-svg {
+    stroke: #403F3D;
+  }
+
+  .slide-control {
+    cursor: default;
+  }
+
+  .slide-control:hover {
+    background: #C1B6AD;
   }
 
 }
