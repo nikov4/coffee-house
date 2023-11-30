@@ -712,4 +712,9 @@ li.item-link:hover .hover-line {
 /* mobile */
 @media (max-width: 380px) {
 
+  .section-header {
+    display: flex;
+    padding: 20px 16px;
+  }
+
 }

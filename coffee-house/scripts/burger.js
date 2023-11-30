@@ -10,6 +10,6 @@ burger.addEventListener('click', function() {
   // mainContainer.classList.toggle('hidden-area');
   // footerContainer.classList.toggle('hidden-area');
   burgerContainer.classList.toggle('burger-container__open');
-  console.log('click');
+  // console.log('click');
 });
 
