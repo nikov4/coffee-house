@@ -707,6 +707,21 @@ li.item-link:hover .hover-line {
     display: flex;
   }
 
+  .hero-wrapper {
+    padding: 100px 60px;
+  }
+
+  .hero-svg {
+    stroke: #403F3D;
+    left: 215px;
+    opacity: 1;
+  }
+
+  .hero-button {
+    width: 100px;
+    margin-right: 25px;
+  }
+
 }
 
 /* mobile */
@@ -715,6 +730,32 @@ li.item-link:hover .hover-line {
   .section-header {
     display: flex;
     padding: 20px 16px;
+  }
+
+  .section-hero {
+    margin: 0 16px;
+  }
+
+  .hero-wrapper {
+    max-width: 348px;
+    padding: 60px 16px;
+  }
+
+  .hero-header {
+    font-size: 42px;
+    line-height: 115%;
+    word-wrap: break-word;
+  }
+
+  .hero-text {
+    word-wrap: break-word;
+    padding-right: 25px;
+  }
+
+  .hero-svg {
+    stroke: #403F3D;
+    left: 150px;
+    opacity: 1;
   }
 
 }
