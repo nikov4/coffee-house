@@ -709,8 +709,11 @@ li.item-link:hover .hover-line {
   }
 
   .hero-wrapper {
-    pointer-events: none;
     padding: 100px 60px;
+  }
+
+  .hero-button-wrapper {
+    cursor: default;
   }
 
   .hero-svg {
@@ -722,6 +725,14 @@ li.item-link:hover .hover-line {
   .hero-button {
     width: 100px;
     margin-right: 25px;
+  }
+
+  .hero-button-wrapper:hover .hero-button {
+    transform: none;
+  }
+
+  .hero-button-wrapper:hover .hero-svg {
+    animation-name: none;
   }
 
   .favorite-carretes {
@@ -748,7 +759,6 @@ li.item-link:hover .hover-line {
   }
 
   .hero-wrapper {
-    pointer-events: none;
     max-width: 348px;
     padding: 60px 16px;
   }
