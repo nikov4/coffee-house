@@ -285,6 +285,10 @@ li.nav-item:hover .hover-line {
   padding: 100px 40px;
 }
 
+.favorite-header {
+  text-align: center;
+}
+
 .favorite-slider {
   display: flex;
   flex-direction: row;
@@ -923,6 +927,11 @@ li.item-link:hover .hover-line {
 
   .section-favorite {
     padding: 100px 16px;
+  }
+
+  .favorite-header {
+    width: 348px;
+    font-size: 32px;
   }
 
   .favorite-wrapper {
