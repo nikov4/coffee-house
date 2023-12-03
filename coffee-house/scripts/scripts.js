@@ -47,11 +47,15 @@ function showOffers(tab) {
       let totalCount = 0;
       let ContainerId = '';
       const offerContainer = document.querySelector('.offers-container');
+      const refreshContainer = document.querySelector('.refresh-container');
 
       for (let [key, value] of Object.entries(data)) {
 
         // current tab
         if (value.category === selectedTab) {
+
+          // hide refresh button
+          refreshContainer.classList.add('block-hide');
 
           // offer
           item = offerContainer.appendChild(document.createElement("div"));
@@ -85,6 +89,12 @@ function showOffers(tab) {
           priceBlock = item.appendChild(document.createElement("div"));
           priceBlock.classList.add('offer-price');
           priceBlock = priceBlock.appendChild(document.createTextNode(`\$${value.price}`));
+
+          // show refresh button
+          if (count > 4) {
+            refreshContainer.classList.remove('block-hide');
+            item.classList.add('block-hide');
+          }
 
         } else {
 

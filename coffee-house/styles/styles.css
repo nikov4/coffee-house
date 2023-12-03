@@ -78,10 +78,6 @@ h2 {
   background: #E1D4C9;
 }
 
-.hidden-area {
-  display: none;
-}
-
 /* Menu hover animation */
 
 .hover-line {
@@ -697,7 +693,7 @@ li.nav-item:hover .hover-line {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding-top: 39px;
+  padding-top: 35px;
   gap: 16px;
 }
 
@@ -727,6 +723,10 @@ li.item-link:hover .hover-line {
 
 /* desktop */
 @media (min-width: 769px) {
+
+  .refresh-container {
+    display: none;
+  }
 
 }
 
