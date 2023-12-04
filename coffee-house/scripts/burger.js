@@ -13,3 +13,7 @@ burger.addEventListener('click', function() {
   // console.log('click');
 });
 
+burgerContainer.addEventListener('click', function() {
+  burger.classList.remove('burger__active');
+  burgerContainer.classList.remove('burger-container__open');
+});
