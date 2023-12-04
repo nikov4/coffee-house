@@ -180,7 +180,8 @@ li.nav-item:hover .hover-line {
 
 .hero-header {
   color: #E1D4C9;
-  font-size: 72px;
+  /* font-size: 72px; */
+  font-size: 4.5rem;
   font-style: normal;
   font-weight: 600;
   line-height: 105%;
