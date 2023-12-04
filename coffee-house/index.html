@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
     <link rel="stylesheet" href="./styles/normalize.css">
+    <link rel="stylesheet" href="./styles/burger.css">
     <link rel="stylesheet" href="./styles/styles.css">
     <link rel="icon" href="./favicon.ico">
     <title>Coffee House</title>
@@ -18,10 +19,26 @@
 
     <div class="container">
 
+      <!-- Burger menu -->
+
+      <div class="burger-container">
+        <div class="burger-item"><a href="#favorite-coffee">Favorite coffee</a></div>
+        <div class="burger-item"><a href="#about">About</a></div>
+        <div class="burger-item"><a href="#mobile-app">Mobile app</a></div>
+        <div class="burger-item"><a href="#contact-us">Contact us</a></div>
+        <div class="burger-item" onclick="window.location.replace('menu.html');">
+          <div class="burger-menu">
+            <div>Menu</div>
+            <div class="burger-cup"></div>
+          </div>
+        </div>
+      </div>
+
       <!-- Section Header -->
 
       <header class="section-header">
-        <a href="index.html"><img src="./images/logo.png" width="100" height="60" alt="Resource Coffee House"></a>
+
+        <div class="header-logo"><a href="index.html"><img src="./images/logo.png" width="100" height="60" alt="Resource Coffee House"></a></div>
         <nav>
           <ul class="section-nav">
             <li class="nav-item"><a class="header-menu" href="#favorite-coffee">Favorite coffee</a><div class="hover-line"></div></li>
@@ -32,13 +49,15 @@
         </nav>
         <ul class="nav-menu">
           <li class="nav-item header-cup" onclick="window.location.replace('menu.html');">
-            <a class="header-menu" href="menu.html">Menu</a>
+            <span class="header-menu">Menu</span>
             <div class="hover-line"></div>
           </li>
         </ul>
+        <div class="burger-button"></div>
+
       </header>
 
-      <main>
+      <main class="section-main">
 
         <!-- Section Hero -->
 
@@ -47,9 +66,7 @@
             <h1 class="hero-header"><span class="hero-header-accent">Enjoy</span> premium coffee at our charming cafe</h1>
             <p class="hero-text">With its inviting atmosphere and delicious coffee options, the Coffee House Resource is a popular destination for coffee lovers and those seeking a warm and inviting space to enjoy their favorite beverage.</p>
             <div class="hero-button-wrapper" onclick="window.location.replace('menu.html');">
-              <div class="hero-button">
-                <a class="hero-link" href="menu.html">Menu</a>
-              </div>
+              <div class="hero-button">Menu</div>
               <svg class="hero-svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M14.167 9.76667V11.6667C14.167 14.8883 11.5553 17.5 8.33366 17.5C5.112 17.5 2.50033 14.8883 2.50033 11.6667V9.76667C2.50033 9.4353 2.76896 9.16667 3.10033 9.16667H13.567C13.8984 9.16667 14.167 9.4353 14.167 9.76667Z" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M10.0003 7.50008C10.0003 6.66675 10.5956 5.83341 11.786 5.83341V5.83341C13.101 5.83341 14.167 4.76743 14.167 3.45246V2.91675" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -63,27 +80,23 @@
         <!-- Section Favorites -->
 
         <section class="section-favorite">
-          <a id="favorite-coffee"></a><h2>Choose your <span class="h2-accent">favorite</span> coffee</h2>
+          <a id="favorite-coffee"></a><h2 class="favorite-header">Choose your <span class="h2-accent">favorite</span> coffee</h2>
           <div class="favorite-slider">
-            <div class="favorite-carretes">
-              <a href="#">
+            <div class="favorite-carretes" onclick="">
                 <svg class="carrete-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M18.5 12H6M6 12L12 6M6 12L12 18" stroke="" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-              </a>
             </div>
             <div class="favorite-wrapper">
-              <img src="./images/slide-coffee-1.png" width="480" height="480" alt="slide 1">
+              <img class="slide-image" src="./images/slide-coffee-1.png" alt="slide 1">
               <p class="slide-header">S'mores Frappuccino</p>
               <p class="slide-text">This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.</p>
               <p class="slide-price">$5.50</p>
             </div>
-            <div class="favorite-carretes">
-              <a href="#">
+            <div class="favorite-carretes" onclick="">
                 <svg class="carrete-svg"  width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M6 12H18.5M18.5 12L12.5 6M18.5 12L12.5 18" stroke="" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-              </a>
             </div>
           </div>
           <div class="slider-controls">
@@ -96,15 +109,15 @@
         <!-- Section About -->
 
         <section class="section-about">
-          <a id="about"></a><h2 class="alignleft">Resource is <span class="h2-accent">the perfect and cozy place</span> where you can enjoy a variety of hot beverages, relax, catch up with friends, or get some work done.</h2>
+          <a id="about"></a><h2 class="about-header">Resource is <span class="h2-accent">the perfect and cozy place</span> where you can enjoy a variety of hot beverages, relax, catch up with friends, or get some work done.</h2>
           <div class="about-images">
             <div class="images-column">
-              <div class="image-box-590"><img class="image-box-590" src="./images/about-1.jpg" alt="about image 1"></div>
-              <div class="image-box-430"><img class="image-box-430" src="./images/about-2.jpg" alt="about image 2"></div>
+              <div class="image-box-1"><div class="about-image-1"></div></div>
+              <div class="image-box-2"><div class="about-image-2"></div></div>
             </div>
             <div class="images-column">
-              <div class="image-box-430"><img class="image-box-430" src="./images/about-3.jpg" alt="about image 3"></div>
-              <div class="image-box-590"><img class="image-box-590" src="./images/about-4.jpg" alt="about image 4"></div>
+              <div class="image-box-3"><div class="about-image-3"></div></div>
+              <div class="image-box-4"><div class="about-image-4"></div></div>
             </div>
           </div>
         </section>
@@ -113,7 +126,7 @@
 
         <section class="section-mobile">
           <div class="mobile-left">
-            <a id="mobile-app"></a><h2 class="alignleft"><span class="mobile-accent">Download</span> our apps to start ordering</h2>
+            <a id="mobile-app"></a><h2 class="mobile-header"><span class="mobile-accent">Download</span> our apps to start ordering</h2>
             <p class="mobile-text">Download the Resource app today and experience the comfort of ordering your favorite coffee from wherever you are</p>
             <div class="mobile-stores">
               <div class="store-button">
@@ -149,8 +162,8 @@
 
       <footer class="section-contacts">
         <div class="contacts-left">
-          <a id="contact-us"></a><h2 class="alignleft color-light">Sip, Savor, Smile. <span class="contacts-accent">It’s coffee time!</span></h2>
-          <div class="contact-social">
+          <a id="contact-us"></a><h2 class="contacts-header">Sip, Savor, Smile. <span class="contacts-accent">It’s coffee time!</span></h2>
+          <div class="contacts-social">
             <div class="social-link">
               <svg class="social-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M23 3.01006C23 3.01006 20.9821 4.20217 19.86 4.54006C19.2577 3.84757 18.4573 3.35675 17.567 3.13398C16.6767 2.91122 15.7395 2.96725 14.8821 3.29451C14.0247 3.62177 13.2884 4.20446 12.773 4.96377C12.2575 5.72309 11.9877 6.62239 12 7.54006V8.54006C10.2426 8.58562 8.50127 8.19587 6.93101 7.4055C5.36074 6.61513 4.01032 5.44869 3 4.01006C3 4.01006 -1 13.0101 8 17.0101C5.94053 18.408 3.48716 19.109 1 19.0101C10 24.0101 21 19.0101 21 7.51006C20.9991 7.23151 20.9723 6.95365 20.92 6.68006C21.9406 5.67355 23 3.01006 23 3.01006Z" stroke="" stroke-linecap="round" stroke-linejoin="round"/>
@@ -171,7 +184,7 @@
           </div>
         </div>
         <div class="contacts-right">
-          <h3 class="contacts-subheader color-light">Contact us</h3>
+          <h3 class="contacts-subheader">Contact us</h3>
           <ul class="contacts-address">
             <li class="address-item item-link" onclick="window.open('https://maps.app.goo.gl/FsGjUaxWCqXiYR1q7');">
               <img src="./images/icon-pin.svg" width="20" height="20" alt="Our address">
@@ -194,6 +207,7 @@
 
     </div>
 
+    <script src="./scripts/burger.js"></script>
     <script src="./scripts/index.js"></script>
 
   </body>

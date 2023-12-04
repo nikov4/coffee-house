@@ -9,7 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
     <link rel="stylesheet" href="./styles/normalize.css">
+    <link rel="stylesheet" href="./styles/burger.css">
     <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/menu.css">
     <link rel="icon" href="./favicon.ico">
     <title>Coffee House</title>
   </head>
@@ -18,10 +20,26 @@
 
     <div class="container">
 
+      <!-- Burger menu -->
+
+      <div class="burger-container">
+        <div class="burger-item"><a href="#favorite-coffee">Favorite coffee</a></div>
+        <div class="burger-item"><a href="#about">About</a></div>
+        <div class="burger-item"><a href="#mobile-app">Mobile app</a></div>
+        <div class="burger-item"><a href="#contact-us">Contact us</a></div>
+        <div class="burger-item" onclick="window.location.replace('menu.html');">
+          <div class="burger-menu">
+            <div>Menu</div>
+            <div class="burger-cup"></div>
+          </div>
+        </div>
+      </div>
+
       <!-- Section Header -->
 
       <header class="section-header">
-        <a href="index.html"><img src="./images/logo.png" width="100" height="60" alt="Resource Coffee House"></a>
+
+        <div class="header-logo"><a href="index.html"><img src="./images/logo.png" width="100" height="60" alt="Resource Coffee House"></a></div>
         <nav>
           <ul class="section-nav">
             <li class="nav-item"><a class="header-menu" href="index.html#favorite-coffee">Favorite coffee</a><div class="hover-line"></div></li>
@@ -36,6 +54,8 @@
             <div class="hover-line hover-line-active"></div>
           </li>
         </ul>
+        <div class="burger-button"></div>
+
       </header>
 
       <main>
@@ -62,6 +82,10 @@
 
           <div class="offers-container"></div>
 
+          <div class="refresh-container">
+            <div class="refresh-button"></div>
+          </div>
+
         </section>
 
       </main>
@@ -70,8 +94,8 @@
 
       <footer class="section-contacts">
         <div class="contacts-left">
-          <a id="contact-us"></a><h2 class="alignleft color-light">Sip, Savor, Smile. <span class="contacts-accent">It’s coffee time!</span></h2>
-          <div class="contact-social">
+          <a id="contact-us"></a><h2 class="contacts-header">Sip, Savor, Smile. <span class="contacts-accent">It’s coffee time!</span></h2>
+          <div class="contacts-social">
             <div class="social-link">
               <svg class="social-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M23 3.01006C23 3.01006 20.9821 4.20217 19.86 4.54006C19.2577 3.84757 18.4573 3.35675 17.567 3.13398C16.6767 2.91122 15.7395 2.96725 14.8821 3.29451C14.0247 3.62177 13.2884 4.20446 12.773 4.96377C12.2575 5.72309 11.9877 6.62239 12 7.54006V8.54006C10.2426 8.58562 8.50127 8.19587 6.93101 7.4055C5.36074 6.61513 4.01032 5.44869 3 4.01006C3 4.01006 -1 13.0101 8 17.0101C5.94053 18.408 3.48716 19.109 1 19.0101C10 24.0101 21 19.0101 21 7.51006C20.9991 7.23151 20.9723 6.95365 20.92 6.68006C21.9406 5.67355 23 3.01006 23 3.01006Z" stroke="" stroke-linecap="round" stroke-linejoin="round"/>
@@ -92,7 +116,7 @@
           </div>
         </div>
         <div class="contacts-right">
-          <h3 class="contacts-subheader color-light">Contact us</h3>
+          <h3 class="contacts-subheader">Contact us</h3>
           <ul class="contacts-address">
             <li class="address-item item-link" onclick="window.open('https://maps.app.goo.gl/FsGjUaxWCqXiYR1q7');">
               <img src="./images/icon-pin.svg" width="20" height="20" alt="Our address">
@@ -115,6 +139,7 @@
 
     </div>
 
+    <script src="./scripts/burger.js"></script>
     <script src="./scripts/scripts.js"></script>
     <script src="./scripts/index.js"></script>
 

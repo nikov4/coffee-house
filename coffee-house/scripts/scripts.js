@@ -42,34 +42,39 @@ function showOffers(tab) {
     .then(function(data) {
 
       // fetching ok
-      let item = '', itemId = '', imgBlock = '', img = '', pix = '', nameBlock = '', textBlock = '', priceBlock = '';
+      let item = '', itemId = '', imgBlock = '', img = '', imgSrc = '', nameBlock = '', textBlock = '', priceBlock = '';
       let count = 0;
       let totalCount = 0;
       let ContainerId = '';
       const offerContainer = document.querySelector('.offers-container');
+      const refreshContainer = document.querySelector('.refresh-container');
 
       for (let [key, value] of Object.entries(data)) {
 
         // current tab
         if (value.category === selectedTab) {
 
+          // hide refresh button
+          refreshContainer.classList.add('block-hide');
+
           // offer
           item = offerContainer.appendChild(document.createElement("div"));
           item.classList.add('offer-item');
           item.setAttribute('id', `offerId_${totalCount}`);
+          // item.setAttribute('onclick', `alert(\'offerId_${totalCount}\')`);
 
           // offer image
           imgBlock = item.appendChild(document.createElement("div"));
           imgBlock.classList.add('offer-img');
           img = imgBlock.appendChild(document.createElement("img"));
           count += 1;
-          pix = pix.concat('./images/', selectedTab, '-', count, '.jpg');
-          img.setAttribute('src', pix);
+          imgSrc = imgSrc.concat('./images/', selectedTab, '-', count, '.jpg');
+          img.setAttribute('src', imgSrc);
           img.setAttribute('width', '680');
           img.setAttribute('height', '680');
           img.setAttribute('alt', `${value.name}`);
           img.classList.add('offer-img');
-          pix = '';
+          imgSrc = '';
 
           // offer name
           nameBlock = item.appendChild(document.createElement("div"));
@@ -85,6 +90,12 @@ function showOffers(tab) {
           priceBlock = item.appendChild(document.createElement("div"));
           priceBlock.classList.add('offer-price');
           priceBlock = priceBlock.appendChild(document.createTextNode(`\$${value.price}`));
+
+          // show refresh button
+          if (count > 4) {
+            refreshContainer.classList.remove('block-hide');
+            item.classList.add('block-hide');
+          }
 
         } else {
 
