@@ -61,6 +61,7 @@ function showOffers(tab) {
           item = offerContainer.appendChild(document.createElement("div"));
           item.classList.add('offer-item');
           item.setAttribute('id', `offerId_${totalCount}`);
+          // item.setAttribute('onclick', `alert(\'offerId_${totalCount}\')`);
 
           // offer image
           imgBlock = item.appendChild(document.createElement("div"));
