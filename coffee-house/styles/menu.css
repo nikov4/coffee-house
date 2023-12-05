@@ -175,6 +175,17 @@
 /* desktop */
 @media (min-width: 769px) {
 
+  .offers-container {
+    width: 100%;
+    max-width: 1360px;
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+    justify-items: center;
+  }
+
+  .offer-item {
+    width: 310px;
+  }
+
   .offer-item:hover .offer-img, .offer-img img:hover {
     transform: scale(1.0,1.0);
    }
