@@ -888,6 +888,29 @@ li.item-link:hover .hover-line {
 
 }
 
+/* from mobile to tablet */
+@media (min-width: 381px) and (max-width: 767px) {
+
+  .section-contacts {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0px;
+    padding: 20px 16px 65px 16px;
+    margin: 100px 16px 40px 16px;
+  }
+
+  .contacts-left {
+    width: 100%;
+  }
+
+  .contacts-header {
+    width: 100%;
+    font-size: 2rem;
+    word-wrap: break-word;
+  }
+
+}
+
 /* mobile */
 @media (max-width: 380px) {
 
