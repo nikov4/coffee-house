@@ -891,6 +891,18 @@ li.item-link:hover .hover-line {
 /* from mobile to tablet */
 @media (min-width: 381px) and (max-width: 767px) {
 
+  .favorite-header, .about-header, .mobile-header {
+    width: 100%;
+    font-size: 2.7rem;
+    word-wrap: break-word;
+  }
+
+  .section-mobile {
+    flex-direction: column;
+    padding: 20px 40px;
+    gap: 80px;
+  }
+
   .section-contacts {
     flex-direction: column;
     align-items: flex-start;
