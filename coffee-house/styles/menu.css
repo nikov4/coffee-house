@@ -212,15 +212,29 @@
   }
 
   .offers-container {
-    margin-bottom: 0px;
-  }
-
-  .offers-container {
     grid-template-columns: 310px 310px;
+    margin-bottom: 0px;
   }
 
   .section-contacts {
     margin-top: 100px;
+  }
+
+}
+
+/* from mobile to tablet */
+@media (min-width: 381px) and (max-width: 767px) {
+
+  .offers-container {
+    width: 100%;
+    max-width: 1360px;
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+    margin-bottom: 0px;
+    justify-items: center;
+  }
+
+  .offer-item {
+    width: 310px;
   }
 
 }
