@@ -897,6 +897,19 @@ li.item-link:hover .hover-line {
     word-wrap: break-word;
   }
 
+  .favorite-slider {
+    flex-direction: column;
+    gap: 0px;
+  }
+
+  .favorite-carretes {
+    display: none;
+  }
+
+  .favorite-wrapper, .slide-text {
+    width: 100%;
+  }
+
   .section-mobile {
     flex-direction: column;
     padding: 20px 40px;
