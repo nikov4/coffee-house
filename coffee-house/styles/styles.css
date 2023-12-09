@@ -91,6 +91,19 @@ h2 {
   background: rgba(110, 110, 110, 0.8);
 }
 
+.modal-window {
+  display: none;
+  position: fixed;
+  width: 768px;
+  height: 472px;
+  background: #E1D4C9;
+  border-radius: 40px;
+  z-index: 7;
+  top:  50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
 .section-hide {
   display: none;
 }
