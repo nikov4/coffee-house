@@ -1,5 +1,26 @@
-
 showOffers('coffee');
+
+// Refresh offers in current menu categoty
+function refreshOffers() {
+
+  // show all offer-items
+  const items = document.getElementsByClassName('offer-item');
+  /*
+  for (var i = 0; i < items.length; i++) {
+    console.log(items[i].id);
+    items[i].classList.remove('block-hide');
+  }
+  */
+  for (let item of items) {
+    // console.log(item.id);
+    item.classList.remove('block-hide');
+  }
+
+  // hide refresh button
+  const refreshContainer = document.querySelector('.refresh-container');
+  refreshContainer.classList.add('block-hide');
+  return true;
+}
 
 // Show offers in current menu categoty
 function showOffers(tab) {
