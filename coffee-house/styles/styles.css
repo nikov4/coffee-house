@@ -91,6 +91,10 @@ h2 {
   background: rgba(110, 110, 110, 0.8);
 }
 
+.section-hide {
+  display: none;
+}
+
 /* Menu hover animation */
 
 .hover-line {

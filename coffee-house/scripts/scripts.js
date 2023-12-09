@@ -19,7 +19,6 @@ function refreshOffers() {
   // hide refresh button
   const refreshContainer = document.querySelector('.refresh-container');
   refreshContainer.classList.add('block-hide');
-  return true;
 }
 
 // Show offers in current menu categoty
