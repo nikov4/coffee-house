@@ -170,6 +170,29 @@
   background-size: cover;
 }
 
+/* Modal window */
+
+.modal-img-box {}
+
+.modal-img {}
+
+.modal-block{}
+
+.modal-name{}
+
+.modal-description{}
+
+.modal-size-block {}
+
+.modal-additives-block {}
+
+.modal-total{}
+
+.modal-info-block{}
+
+.modal-close{}
+
+
 /* Media query's */
 
 /* desktop */

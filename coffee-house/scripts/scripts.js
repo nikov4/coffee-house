@@ -1,6 +1,6 @@
 showOffers('coffee');
 
-// Modalal hide
+// Modal hide
 function modalHide() {
 	document.querySelector('.modal-wrapper').style.display = 'none';
 	document.querySelector('.modal-window').style.display = 'none';
@@ -19,7 +19,6 @@ function modalHide() {
 
 // Modal show
 function modalShow(id, imgId){
-  // console.log(id, imgId);
 	const modalWrapper = document.querySelector('.modal-wrapper');
 	const modalContainer = document.querySelector('.modal-window');
   modalWrapper.style.display = 'block';
@@ -39,16 +38,20 @@ function modalShow(id, imgId){
     .then(function(data) {
 
       // fetching ok
-      let item = '', img = '', imgBlock = '', imgSrc = '', itemBlock = '', itemName = '', itemDescription = '', itemSize = '', itemAdittives = '', itemTotal = '', totalSumm = 0, itemInfo = '', itemClose = '';
+      let item = '', img = '', imgBlock = '', imgSrc = '', itemBlock = '', itemName = '', itemDescription = '', itemSizes = '', itemSize = '', itemSizeBlock = '', itemAdittives = '', itemAdittive = '', itemAdittiveBlock = '', itemTotal = '',  itemTotalBlock = '', totalSumm = 0, itemInfo = '', itemInfoBlock = '', itemClose = '';
       const infoText = 'The cost is not final. Download our mobile app to see the final price and place your order. Earn loyalty points and enjoy your favorite coffee with up to 20% discount.';
       let totalCount = 0;
+      let sizes = {};
+      let additives = {};
+      let additivesCount = 0;
+      let selectedSize = '', selectedAdditive = '';
 
       for (let [key, value] of Object.entries(data)) {
 
         // found necessery id
         if (totalCount === Number(id)) {
 
-          // item
+          // modal
           item = modalContainer.appendChild(document.createElement("div"));
           // item.setAttribute('id', `modalId_${id}`);
           item.setAttribute('id', 'modalWindow');
@@ -80,30 +83,73 @@ function modalShow(id, imgId){
           itemDescription = itemDescription.appendChild(document.createTextNode(`${value.description}`));
 
           // item sizes block
-          itemSize = itemBlock.appendChild(document.createElement("div"));
-          itemSize.classList.add('modal-size-block');
-          itemSize = itemSize.appendChild(document.createTextNode(`${value.sizes}`));
+          itemSizes = itemBlock.appendChild(document.createElement("div"));
+          itemSizes.classList.add('modal-size-block');
+
+          // size items
+          sizes = value.sizes;
+          for (let [sizeKey, sizeValue] of Object.entries(sizes)) {
+            itemSize = itemSizes.appendChild(document.createElement("div"));
+            itemSize.classList.add('size-block-item');
+            itemSize.setAttribute('onClick', `modalCalc()`);
+            // size name
+            itemSizeBlock = itemSize.appendChild(document.createElement("div"));
+            itemSizeBlock.classList.add('block-item-name');
+            itemSizeBlock = itemSizeBlock.appendChild(document.createTextNode(sizeKey));
+            // size value
+            itemSizeBlock = itemSize.appendChild(document.createElement("div"));
+            itemSizeBlock.classList.add('block-item-value');
+            itemSizeBlock = itemSizeBlock.appendChild(document.createTextNode(sizeValue.size));
+          }
 
           // item additives block
           itemAdittives = itemBlock.appendChild(document.createElement("div"));
           itemAdittives.classList.add('modal-additives-block');
-          itemAdittives = itemAdittives.appendChild(document.createTextNode(`${value.additives}`));
 
-          // item total
+          // additive items
+          additives = value.additives;
+          for (let [additiveKey, additiveValue] of Object.entries(additives)) {
+            additivesCount += 1;
+            itemAdittive = itemAdittives.appendChild(document.createElement("div"));
+            itemAdittive.classList.add('additive-block-item');
+            itemAdittive.setAttribute('onClick', `modalCalc()`);
+            // size name
+            itemAdittiveBlock = itemAdittive.appendChild(document.createElement("div"));
+            itemAdittiveBlock.classList.add('block-item-name');
+            itemAdittiveBlock = itemAdittiveBlock.appendChild(document.createTextNode(additivesCount));
+            // size value
+            itemAdittiveBlock = itemAdittive.appendChild(document.createElement("div"));
+            itemAdittiveBlock.classList.add('block-item-value');
+            itemAdittiveBlock = itemAdittiveBlock.appendChild(document.createTextNode(additiveValue.name));
+          }
+
+          // item total block
           itemTotal = itemBlock.appendChild(document.createElement("div"));
-          itemTotal.classList.add('modal-total');
-          itemTotal = itemTotal.appendChild(document.createTextNode(`${totalSumm}`));
+          itemTotal.classList.add('modal-total-block');
+          // total
+          itemTotalBlock = itemTotal.appendChild(document.createElement("div"));
+          itemTotalBlock.classList.add('total-block-text');
+          itemTotalBlock = itemTotalBlock.appendChild(document.createTextNode('Total:'));
+          // total summ
+          itemTotalBlock = itemTotal.appendChild(document.createElement("div"));
+          itemTotalBlock.classList.add('total-block-summ');
+          itemTotalBlock = itemTotalBlock.appendChild(document.createTextNode(`\$${totalSumm}`));
 
-          // item info
+          // item info block
           itemInfo = itemBlock.appendChild(document.createElement("div"));
           itemInfo.classList.add('modal-info-block');
-          itemInfo = itemInfo.appendChild(document.createTextNode(`${infoText}`));
+          // info icon
+          itemInfoBlock = itemInfo.appendChild(document.createElement("div"));
+          itemInfoBlock.classList.add('info-block-icon');
+          // info text
+          itemInfoBlock = itemInfo.appendChild(document.createElement("div"));
+          itemInfoBlock.classList.add('info-block-text');
+          itemInfoBlock = itemInfoBlock.appendChild(document.createTextNode(`${infoText}`));
 
           // item close button
           itemClose = itemBlock.appendChild(document.createElement("div"));
           itemClose.classList.add('modal-close');
           itemClose.setAttribute('onClick', 'modalHide()');
-          //itemClose.setAttribute('onClick', `modalHide(\'${id}\')`);
           itemClose = itemClose.appendChild(document.createTextNode('Close'));
 
         }
@@ -112,12 +158,10 @@ function modalShow(id, imgId){
 
       }
     })
-  .catch(function(error) {
-    // fetching error
-    console.log(error);
-});
-
-
+    .catch(function(error) {
+      // fetching error
+      console.log(error);
+  });
 }
 
 // Refresh offers in current menu categoty
