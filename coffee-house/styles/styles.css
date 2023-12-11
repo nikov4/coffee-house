@@ -78,6 +78,23 @@ h2 {
   background: #E1D4C9;
 }
 
+.modal-wrapper {
+  display: none;
+	position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: 5;
+  background: rgba(110, 110, 110, 0.8);
+}
+
+.section-hide {
+  display: none;
+}
+
 /* Menu hover animation */
 
 .hover-line {
