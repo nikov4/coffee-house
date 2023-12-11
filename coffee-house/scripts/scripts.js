@@ -38,13 +38,15 @@ function modalShow(id, imgId){
     .then(function(data) {
 
       // fetching ok
-      let item = '', img = '', imgBlock = '', imgSrc = '', itemBlock = '', itemName = '', itemDescription = '', itemSizes = '', itemSize = '', itemSizeBlock = '', itemAdittives = '', itemAdittive = '', itemAdittiveBlock = '', itemTotal = '',  itemTotalBlock = '', totalSumm = 0, itemInfo = '', itemInfoBlock = '', itemClose = '';
+      let item = '', img = '', imgBlock = '', imgSrc = '', itemBlock = '', itemNameBlock = '', itemName = '', itemDescription = '', itemSizeBlock = '', itemSizeButton = '', itemSizeContent = '', itemSize = '', itemAdittiveBlock = '', itemAdittiveButton = '', itemAdittiveContent = '', itemAdittive = '', itemTotal = '',  itemTotalBlock = '', itemInfo = '', itemInfoBlock = '', itemClose = '';
       const infoText = 'The cost is not final. Download our mobile app to see the final price and place your order. Earn loyalty points and enjoy your favorite coffee with up to 20% discount.';
       let totalCount = 0;
       let sizes = {};
       let additives = {};
       let additivesCount = 0;
       let selectedSize = '', selectedAdditive = '';
+      let totalSumm = 7;
+      totalSumm = totalSumm.toFixed(2);
 
       for (let [key, value] of Object.entries(data)) {
 
@@ -53,12 +55,15 @@ function modalShow(id, imgId){
 
           // modal
           item = modalContainer.appendChild(document.createElement("div"));
+          item.classList.add('modal-container');
           // item.setAttribute('id', `modalId_${id}`);
           item.setAttribute('id', 'modalWindow');
 
           // item image
           imgBlock = item.appendChild(document.createElement("div"));
-          imgBlock.classList.add('modal-img-box');
+          imgBlock.classList.add('modal-img-block');
+          imgBlock.classList.add('modal-img');
+          // imgBlock.classList.add('offer-img');
           img = imgBlock.appendChild(document.createElement("img"));
           imgSrc = imgSrc.concat('./images/', `${value.category}`, '-', imgId, '.jpg');
           img.setAttribute('src', imgSrc);
@@ -66,61 +71,75 @@ function modalShow(id, imgId){
           img.setAttribute('height', '340');
           img.setAttribute('alt', `${value.name}`);
           img.classList.add('modal-img');
+          // img.classList.add('offer-img');
           imgSrc = '';
 
           // item block
           itemBlock = item.appendChild(document.createElement("div"));
           itemBlock.classList.add('modal-block');
 
-          // item name
-          itemName = itemBlock.appendChild(document.createElement("div"));
+          // item name block
+          itemNameBlock = itemBlock.appendChild(document.createElement("div"));
+          itemNameBlock.classList.add('modal-name-block');
+          // name
+          itemName = itemNameBlock.appendChild(document.createElement("div"));
           itemName.classList.add('modal-name');
-          itemName = itemName.appendChild(document.createTextNode(`${value.name}`));
-
-          // item description
-          itemDescription = itemBlock.appendChild(document.createElement("div"));
+          itemName = itemName.appendChild(document.createTextNode(value.name));
+          // description
+          itemDescription = itemNameBlock.appendChild(document.createElement("div"));
           itemDescription.classList.add('modal-description');
-          itemDescription = itemDescription.appendChild(document.createTextNode(`${value.description}`));
+          itemDescription = itemDescription.appendChild(document.createTextNode(value.description));
 
           // item sizes block
-          itemSizes = itemBlock.appendChild(document.createElement("div"));
-          itemSizes.classList.add('modal-size-block');
-
+          itemSizeBlock = itemBlock.appendChild(document.createElement("div"));
+          itemSizeBlock.classList.add('modal-size-block');
+          // size
+          itemSize = itemSizeBlock.appendChild(document.createElement("div"));
+          itemSize.classList.add('modal-size');
+          itemSize = itemSize.appendChild(document.createTextNode('Size'));
           // size items
           sizes = value.sizes;
+          itemSize = itemSizeBlock.appendChild(document.createElement("div"));
+          itemSize.classList.add('modal-block-wrapper');
+          if (selectedSize === ''){selectedSize = 's'};
           for (let [sizeKey, sizeValue] of Object.entries(sizes)) {
-            itemSize = itemSizes.appendChild(document.createElement("div"));
-            itemSize.classList.add('size-block-item');
-            itemSize.setAttribute('onClick', `modalCalc()`);
+            itemSizeButton = itemSize.appendChild(document.createElement("div"));
+            itemSizeButton.classList.add('modal-block-item');
+            itemSizeButton.setAttribute('onClick', `modalCalc()`);
             // size name
-            itemSizeBlock = itemSize.appendChild(document.createElement("div"));
-            itemSizeBlock.classList.add('block-item-name');
-            itemSizeBlock = itemSizeBlock.appendChild(document.createTextNode(sizeKey));
+            itemSizeContent = itemSizeButton.appendChild(document.createElement("div"));
+            itemSizeContent.classList.add('block-item-name');
+            itemSizeContent = itemSizeContent.appendChild(document.createTextNode(sizeKey.toUpperCase()));
             // size value
-            itemSizeBlock = itemSize.appendChild(document.createElement("div"));
-            itemSizeBlock.classList.add('block-item-value');
-            itemSizeBlock = itemSizeBlock.appendChild(document.createTextNode(sizeValue.size));
+            itemSizeContent = itemSizeButton.appendChild(document.createElement("div"));
+            itemSizeContent.classList.add('block-item-value');
+            itemSizeContent = itemSizeContent.appendChild(document.createTextNode(sizeValue.size));
           }
 
           // item additives block
-          itemAdittives = itemBlock.appendChild(document.createElement("div"));
-          itemAdittives.classList.add('modal-additives-block');
-
+          itemAdittiveBlock = itemBlock.appendChild(document.createElement("div"));
+          itemAdittiveBlock.classList.add('modal-additives-block');
+          // additives
+          itemAdittive = itemAdittiveBlock.appendChild(document.createElement("div"));
+          itemAdittive.classList.add('modal-additives');
+          itemAdittive = itemAdittive.appendChild(document.createTextNode('Additives'));
           // additive items
           additives = value.additives;
+          itemAdittive = itemAdittiveBlock.appendChild(document.createElement("div"));
+          itemAdittive.classList.add('modal-block-wrapper');
           for (let [additiveKey, additiveValue] of Object.entries(additives)) {
             additivesCount += 1;
-            itemAdittive = itemAdittives.appendChild(document.createElement("div"));
-            itemAdittive.classList.add('additive-block-item');
-            itemAdittive.setAttribute('onClick', `modalCalc()`);
+            itemAdittiveButton = itemAdittive.appendChild(document.createElement("div"));
+            itemAdittiveButton.classList.add('modal-block-item');
+            itemAdittiveButton.setAttribute('onClick', `modalCalc()`);
             // size name
-            itemAdittiveBlock = itemAdittive.appendChild(document.createElement("div"));
-            itemAdittiveBlock.classList.add('block-item-name');
-            itemAdittiveBlock = itemAdittiveBlock.appendChild(document.createTextNode(additivesCount));
+            itemAdittiveContent = itemAdittiveButton.appendChild(document.createElement("div"));
+            itemAdittiveContent.classList.add('block-item-name');
+            itemAdittiveContent = itemAdittiveContent.appendChild(document.createTextNode(additivesCount));
             // size value
-            itemAdittiveBlock = itemAdittive.appendChild(document.createElement("div"));
-            itemAdittiveBlock.classList.add('block-item-value');
-            itemAdittiveBlock = itemAdittiveBlock.appendChild(document.createTextNode(additiveValue.name));
+            itemAdittiveContent = itemAdittiveButton.appendChild(document.createElement("div"));
+            itemAdittiveContent.classList.add('block-item-value');
+            itemAdittiveContent = itemAdittiveContent.appendChild(document.createTextNode(additiveValue.name));
           }
 
           // item total block
