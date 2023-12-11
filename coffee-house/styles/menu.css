@@ -107,6 +107,7 @@
   height: 506px;
   border-radius: 40px;
   border: 1px solid #C1B6AD;
+  cursor: pointer;
 }
 
 .offer-img {
@@ -297,6 +298,10 @@
   font-style: normal;
   font-weight: 600;
   line-height: 150%;
+  transition-duration: 0.5s;
+  transition-property: all;
+  transition-delay: 0s;
+  transition-timing-function: ease-in-out;
 }
 
 .block-item-value-selected, .modal-block-item:hover .block-item-value {
@@ -319,7 +324,7 @@
 
 .modal-info-block {
   border-top: 1px solid #C1B6AD;
-  padding: 12px 0px;
+  padding: 10px 0px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -351,6 +356,10 @@
   align-self: stretch;
   border-radius: 100px;
   border: 1px solid #665F55;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
 }
 
 .modal-close:hover {
@@ -404,6 +413,10 @@
   .offers-container {
     grid-template-columns: 310px 310px;
     margin-bottom: 0px;
+  }
+
+  .offer-item {
+    cursor: default;
   }
 
   .section-contacts {

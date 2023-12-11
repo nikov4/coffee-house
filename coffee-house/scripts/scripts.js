@@ -7,22 +7,38 @@ function modalHide() {
   const modalContainer = document.querySelector('.modal-window');
   let itemId = '';
 
-  // delete outdated modals
+/*
+  // clear modal window
   if (modalContainer.hasChildNodes()) {
     let ContainerId = document.getElementById('modalWindow');
-    // if modal exist
+    // if modal content exist
     if (document.body.contains(ContainerId)) {
       itemId = modalContainer.removeChild(ContainerId);
     }
   }
+*/
 }
 
 // Modal show
-function modalShow(id, imgId){
+function modalShow(id, imgId, size, additive){
 	const modalWrapper = document.querySelector('.modal-wrapper');
 	const modalContainer = document.querySelector('.modal-window');
   modalWrapper.style.display = 'block';
   modalContainer.style.display = 'block';
+  let itemId = '';
+  let selectedSize = size;
+  // set default size
+  if (selectedSize === undefined){selectedSize = 's'};
+  let selectedAdditive = additive;
+
+  // clear modal window
+  if (modalContainer.hasChildNodes()) {
+    let ContainerId = document.getElementById('modalWindow');
+    // if modal content exist
+    if (document.body.contains(ContainerId)) {
+      itemId = modalContainer.removeChild(ContainerId);
+    }
+  }
 
   // fetching data from json file
   const jsonFile = './products.json';
@@ -44,14 +60,15 @@ function modalShow(id, imgId){
       let sizes = {};
       let additives = {};
       let additivesCount = 0;
-      let selectedSize = '', selectedAdditive = '';
-      let totalSumm = 7;
-      totalSumm = totalSumm.toFixed(2);
+      let totalSumm = 0;
 
       for (let [key, value] of Object.entries(data)) {
 
         // found necessery id
         if (totalCount === Number(id)) {
+
+          // total summ
+          totalSumm = Number(value.price);
 
           // modal
           item = modalContainer.appendChild(document.createElement("div"));
@@ -63,7 +80,6 @@ function modalShow(id, imgId){
           imgBlock = item.appendChild(document.createElement("div"));
           imgBlock.classList.add('modal-img-block');
           imgBlock.classList.add('modal-img');
-          // imgBlock.classList.add('offer-img');
           img = imgBlock.appendChild(document.createElement("img"));
           imgSrc = imgSrc.concat('./images/', `${value.category}`, '-', imgId, '.jpg');
           img.setAttribute('src', imgSrc);
@@ -71,7 +87,6 @@ function modalShow(id, imgId){
           img.setAttribute('height', '340');
           img.setAttribute('alt', `${value.name}`);
           img.classList.add('modal-img');
-          // img.classList.add('offer-img');
           imgSrc = '';
 
           // item block
@@ -101,18 +116,31 @@ function modalShow(id, imgId){
           sizes = value.sizes;
           itemSize = itemSizeBlock.appendChild(document.createElement("div"));
           itemSize.classList.add('modal-block-wrapper');
-          if (selectedSize === ''){selectedSize = 's'};
           for (let [sizeKey, sizeValue] of Object.entries(sizes)) {
             itemSizeButton = itemSize.appendChild(document.createElement("div"));
             itemSizeButton.classList.add('modal-block-item');
-            itemSizeButton.setAttribute('onClick', `modalCalc()`);
+            itemSizeButton.setAttribute('onClick', `modalShow(\'${id}\', \'${imgId}\', \'${sizeKey}\', \'${selectedAdditive}\')`);
+            // selected size
+            if (selectedSize === sizeKey){
+              itemSizeButton.classList.add('modal-block-item-selected');
+              // total summ plus size
+              totalSumm = totalSumm + Number(sizeValue['add-price']);
+            }
             // size name
             itemSizeContent = itemSizeButton.appendChild(document.createElement("div"));
             itemSizeContent.classList.add('block-item-name');
+            // selected size name
+            if (selectedSize === sizeKey){
+              itemSizeContent.classList.add('block-item-name-selected');
+            }
             itemSizeContent = itemSizeContent.appendChild(document.createTextNode(sizeKey.toUpperCase()));
             // size value
             itemSizeContent = itemSizeButton.appendChild(document.createElement("div"));
             itemSizeContent.classList.add('block-item-value');
+            // selected size value
+            if (selectedSize === sizeKey){
+              itemSizeContent.classList.add('block-item-value-selected');
+            }
             itemSizeContent = itemSizeContent.appendChild(document.createTextNode(sizeValue.size));
           }
 
@@ -131,14 +159,28 @@ function modalShow(id, imgId){
             additivesCount += 1;
             itemAdittiveButton = itemAdittive.appendChild(document.createElement("div"));
             itemAdittiveButton.classList.add('modal-block-item');
-            itemAdittiveButton.setAttribute('onClick', `modalCalc()`);
-            // size name
+            itemAdittiveButton.setAttribute('onClick', `modalShow(\'${id}\', \'${imgId}\', \'${selectedSize}\', \'${additiveKey}\')`);
+            // selected additive
+            if (selectedAdditive === additiveKey){
+              itemAdittiveButton.classList.add('modal-block-item-selected');
+              // total summ plus additive
+              totalSumm = totalSumm + Number(additiveValue['add-price']);
+            }
+            // additive name
             itemAdittiveContent = itemAdittiveButton.appendChild(document.createElement("div"));
             itemAdittiveContent.classList.add('block-item-name');
+            // selected additive name
+            if (selectedAdditive === additiveKey){
+              itemAdittiveContent.classList.add('block-item-name-selected');
+            }
             itemAdittiveContent = itemAdittiveContent.appendChild(document.createTextNode(additivesCount));
-            // size value
+            // additive value
             itemAdittiveContent = itemAdittiveButton.appendChild(document.createElement("div"));
             itemAdittiveContent.classList.add('block-item-value');
+            // selected additive value
+            if (selectedAdditive === additiveKey){
+              itemAdittiveContent.classList.add('block-item-value-selected');
+            }
             itemAdittiveContent = itemAdittiveContent.appendChild(document.createTextNode(additiveValue.name));
           }
 
@@ -150,6 +192,7 @@ function modalShow(id, imgId){
           itemTotalBlock.classList.add('total-block-text');
           itemTotalBlock = itemTotalBlock.appendChild(document.createTextNode('Total:'));
           // total summ
+          totalSumm = totalSumm.toFixed(2);
           itemTotalBlock = itemTotal.appendChild(document.createElement("div"));
           itemTotalBlock.classList.add('total-block-summ');
           itemTotalBlock = itemTotalBlock.appendChild(document.createTextNode(`\$${totalSumm}`));
