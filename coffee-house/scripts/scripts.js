@@ -19,7 +19,6 @@ function modalHide() {
       itemId = modalContainer.removeChild(ContainerId);
     }
   }
-
 }
 
 // Modal show
@@ -30,9 +29,16 @@ function modalShow(id, imgId, size, additive){
   modalContainer.style.display = 'block';
   let itemId = '';
   let selectedSize = size;
-  // set default size
   if (selectedSize === undefined){selectedSize = 's'};
   let selectedAdditive = additive;
+  if (selectedAdditive === undefined){selectedAdditive = ''};
+  // multiple additives
+  let selectedAdditives = {};
+  if (selectedAdditive){
+    selectedAdditives = selectedAdditive.split(',');
+  }
+  // console.log('selectedAdditive=', selectedAdditive);
+  // console.log('selectedAdditives=', selectedAdditives);
 
   // disable scroll
   const body = document.getElementsByTagName('body');
@@ -167,28 +173,62 @@ function modalShow(id, imgId, size, additive){
             additivesCount += 1;
             itemAdittiveButton = itemAdittive.appendChild(document.createElement("div"));
             itemAdittiveButton.classList.add('modal-block-item');
-            itemAdittiveButton.setAttribute('onClick', `modalShow(\'${id}\', \'${imgId}\', \'${selectedSize}\', \'${additiveKey}\')`);
-            // selected additive
-            if (selectedAdditive === additiveKey){
-              itemAdittiveButton.removeAttribute('onClick');
-              itemAdittiveButton.classList.add('modal-block-item-selected');
-              // total summ plus additive
-              totalSumm = totalSumm + Number(additiveValue['add-price']);
+            if (selectedAdditive){
+              itemAdittiveButton.setAttribute('onClick', `modalShow(\'${id}\', \'${imgId}\', \'${selectedSize}\', \'${selectedAdditive}, ${additiveKey}\')`);
+            } else {
+              itemAdittiveButton.setAttribute('onClick', `modalShow(\'${id}\', \'${imgId}\', \'${selectedSize}\', \'${additiveKey}\')`);
+            }
+            // selected multiple additives
+            if (selectedAdditive.length > 1){
+              for (let i = 0; i < selectedAdditive.length; i++) {
+                if (selectedAdditive[i] === additiveKey){
+                  itemAdittiveButton.removeAttribute('onClick');
+                  itemAdittiveButton.classList.add('modal-block-item-selected');
+                  // total summ plus additives
+                  totalSumm = totalSumm + Number(additiveValue['add-price']);
+                }
+              }
+            } else {
+              // selected single additive
+              if (selectedAdditive === additiveKey){
+                itemAdittiveButton.removeAttribute('onClick');
+                itemAdittiveButton.classList.add('modal-block-item-selected');
+                // total summ plus additive
+                totalSumm = totalSumm + Number(additiveValue['add-price']);
+              }
             }
             // additive name
             itemAdittiveContent = itemAdittiveButton.appendChild(document.createElement("div"));
             itemAdittiveContent.classList.add('block-item-name');
-            // selected additive name
-            if (selectedAdditive === additiveKey){
-              itemAdittiveContent.classList.add('block-item-name-selected');
+            // selected multiple additives
+            if (selectedAdditive.length > 1){
+              for (let i = 0; i < selectedAdditive.length; i++) {
+                if (selectedAdditive[i] === additiveKey){
+                  itemAdittiveContent.classList.add('block-item-name-selected');
+                }
+              }
+            } else {
+              // selected single additive
+              if (selectedAdditive === additiveKey){
+                itemAdittiveContent.classList.add('block-item-name-selected');
+              }
             }
             itemAdittiveContent = itemAdittiveContent.appendChild(document.createTextNode(additivesCount));
             // additive value
             itemAdittiveContent = itemAdittiveButton.appendChild(document.createElement("div"));
             itemAdittiveContent.classList.add('block-item-value');
-            // selected additive value
-            if (selectedAdditive === additiveKey){
-              itemAdittiveContent.classList.add('block-item-value-selected');
+            // selected multiple additives
+            if (selectedAdditive.length > 1){
+              for (let i = 0; i < selectedAdditive.length; i++) {
+                if (selectedAdditive[i] === additiveKey){
+                  itemAdittiveContent.classList.add('block-item-value-selected');
+                }
+              }
+            } else {
+              // selected additive value
+              if (selectedAdditive === additiveKey){
+                itemAdittiveContent.classList.add('block-item-value-selected');
+              }
             }
             itemAdittiveContent = itemAdittiveContent.appendChild(document.createTextNode(additiveValue.name));
           }
