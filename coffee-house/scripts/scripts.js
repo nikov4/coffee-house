@@ -7,7 +7,6 @@ function modalHide() {
   const modalContainer = document.querySelector('.modal-window');
   let itemId = '';
 
-/*
   // clear modal window
   if (modalContainer.hasChildNodes()) {
     let ContainerId = document.getElementById('modalWindow');
@@ -16,7 +15,7 @@ function modalHide() {
       itemId = modalContainer.removeChild(ContainerId);
     }
   }
-*/
+
 }
 
 // Modal show
@@ -122,6 +121,7 @@ function modalShow(id, imgId, size, additive){
             itemSizeButton.setAttribute('onClick', `modalShow(\'${id}\', \'${imgId}\', \'${sizeKey}\', \'${selectedAdditive}\')`);
             // selected size
             if (selectedSize === sizeKey){
+              itemSizeButton.removeAttribute('onClick');
               itemSizeButton.classList.add('modal-block-item-selected');
               // total summ plus size
               totalSumm = totalSumm + Number(sizeValue['add-price']);
@@ -162,6 +162,7 @@ function modalShow(id, imgId, size, additive){
             itemAdittiveButton.setAttribute('onClick', `modalShow(\'${id}\', \'${imgId}\', \'${selectedSize}\', \'${additiveKey}\')`);
             // selected additive
             if (selectedAdditive === additiveKey){
+              itemAdittiveButton.removeAttribute('onClick');
               itemAdittiveButton.classList.add('modal-block-item-selected');
               // total summ plus additive
               totalSumm = totalSumm + Number(additiveValue['add-price']);
