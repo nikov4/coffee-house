@@ -7,6 +7,10 @@ function modalHide() {
   const modalContainer = document.querySelector('.modal-window');
   let itemId = '';
 
+  // enable scroll
+  const body = document.getElementsByTagName('body');
+  body[0].classList.remove('no-scroll');
+
   // clear modal window
   if (modalContainer.hasChildNodes()) {
     let ContainerId = document.getElementById('modalWindow');
@@ -20,7 +24,7 @@ function modalHide() {
 
 // Modal show
 function modalShow(id, imgId, size, additive){
-	const modalWrapper = document.querySelector('.modal-wrapper');
+  const modalWrapper = document.querySelector('.modal-wrapper');
 	const modalContainer = document.querySelector('.modal-window');
   modalWrapper.style.display = 'block';
   modalContainer.style.display = 'block';
@@ -29,6 +33,10 @@ function modalShow(id, imgId, size, additive){
   // set default size
   if (selectedSize === undefined){selectedSize = 's'};
   let selectedAdditive = additive;
+
+  // disable scroll
+  const body = document.getElementsByTagName('body');
+  body[0].classList.add('no-scroll');
 
   // clear modal window
   if (modalContainer.hasChildNodes()) {
