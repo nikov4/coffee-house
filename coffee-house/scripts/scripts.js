@@ -37,8 +37,6 @@ function modalShow(id, imgId, size, additive){
   if (selectedAdditive){
     selectedAdditives = selectedAdditive.split(',');
   }
-  // console.log('selectedAdditive=', selectedAdditive);
-  // console.log('selectedAdditives=', selectedAdditives);
 
   // disable scroll
   const body = document.getElementsByTagName('body');
@@ -280,12 +278,6 @@ function refreshOffers() {
 
   // show all offer-items
   const items = document.getElementsByClassName('offer-item');
-  /*
-  for (let i = 0; i < items.length; i++) {
-    console.log(items[i].id);
-    items[i].classList.remove('block-hide');
-  }
-  */
   for (let item of items) {
     // console.log(item.id);
     item.classList.remove('block-hide');
