@@ -95,6 +95,11 @@ h2 {
   display: none;
 }
 
+.no-scroll {
+  /* height: 100%; */
+  overflow: hidden;
+}
+
 /* Menu hover animation */
 
 .hover-line {

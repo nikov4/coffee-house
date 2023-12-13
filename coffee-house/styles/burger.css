@@ -22,6 +22,7 @@
 
 .burger-container {
   width: 100%;
+  height: 100vh;
   top: 0px;
   right: -768px;
   z-index: 3;
@@ -74,7 +75,7 @@
 @media (max-width: 768px) {
 
   .burger-container {
-    height: 924px;
+    /* height: 924px; */
   }
 
 }
@@ -83,7 +84,7 @@
 @media (max-width: 380px) {
 
   .burger-container {
-    height: 724px;
+    /* height: 724px; */
   }
 
 }
