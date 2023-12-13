@@ -68,23 +68,3 @@
   background-image: url(../images/icon-coffee-cup-big.svg);
   background-repeat: no-repeat;
 }
-
-/* Media query's */
-
-/* tablet */
-@media (max-width: 768px) {
-
-  .burger-container {
-    /* height: 924px; */
-  }
-
-}
-
-/* mobile */
-@media (max-width: 380px) {
-
-  .burger-container {
-    /* height: 724px; */
-  }
-
-}
