@@ -91,6 +91,7 @@ function modalShow(id, imgId, size, additive){
           imgBlock = item.appendChild(document.createElement("div"));
           imgBlock.classList.add('modal-img-block');
           imgBlock.classList.add('modal-img');
+          imgBlock.classList.add('img-hide');
           img = imgBlock.appendChild(document.createElement("img"));
           imgSrc = imgSrc.concat('./images/', `${value.category}`, '-', imgId, '.jpg');
           img.setAttribute('src', imgSrc);
