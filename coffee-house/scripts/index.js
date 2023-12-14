@@ -1,4 +1,4 @@
-console.log("Score for this task is 64 points\n");
+console.log("Score for this task is 62 points\n");
 console.log(`tasks:\n`);
 console.log(`+ Implementation of the burger menu on both pages: +20\n`);
 console.log(`- Implementation of the carousel on the home page: 0\n`);
