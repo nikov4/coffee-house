@@ -184,7 +184,6 @@
   display: none;
   position: fixed;
   width: 800px;
-  height: 504px;
   background: #E1D4C9;
   border-radius: 40px;
   z-index: 7;
@@ -283,8 +282,6 @@
   border-radius: 100px;
   width: 30px;
   height: 30px;
-  /* padding: 7px 7px; */
-  /* padding: 3px 9px 3px 10px; */
   background: #C1B6AD;
   font-size: 16px;
   font-weight: 600;
@@ -375,7 +372,6 @@
   background: #665F55;
 }
 
-
 /* Media query's */
 
 /* desktop */
@@ -405,6 +401,10 @@
     margin-top: 100px;
   }
 
+  .modal-window {
+    height: 504px;
+  }
+
 }
 
 /* tablet */
@@ -429,6 +429,25 @@
 
   .section-contacts {
     margin-top: 100px;
+  }
+
+  .modal-window {
+    width: 100%;
+    max-width: 688px;
+  }
+
+  .modal-container {
+    height: 100%;
+  }
+
+  .modal-block-wrapper {
+    width: 100%;
+    max-width: 326px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
   }
 
 }
@@ -496,6 +515,15 @@
 
   .section-contacts {
     margin-top: 100px;
+  }
+
+  .modal-window {
+    width: 100%;
+    max-width: 342px;
+  }
+
+  .img-hide {
+    display: none;
   }
 
 }
