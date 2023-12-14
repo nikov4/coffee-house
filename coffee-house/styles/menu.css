@@ -474,6 +474,15 @@
     width: 310px;
   }
 
+  .modal-window {
+    width: 100%;
+    max-width: 342px;
+  }
+
+  .img-hide {
+    display: none;
+  }
+
 }
 
 /* mobile */
